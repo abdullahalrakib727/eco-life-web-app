@@ -6,7 +6,9 @@ import leafImg from '../../assets/leaf.png'
 
 const Banner = () => {
   return (
-    
+    <section className="mt-20">
+     
+    </section>
   );
 };
 
