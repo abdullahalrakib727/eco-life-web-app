@@ -13,3 +13,11 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.font-primary{
+  color: #2BAE7A;
+}
+
+.font-secondary{
+  color: #D2B48C;
+}

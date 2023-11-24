@@ -1,11 +1,13 @@
+import Container from "../Container/Container";
+
+import bannerImg from '../../assets/banner.png'
+import leafImg from '../../assets/leaf.png'
 
 
 const Banner = () => {
-    return (
-        <div>
-            
-        </div>
-    );
+  return (
+    
+  );
 };
 
 export default Banner;

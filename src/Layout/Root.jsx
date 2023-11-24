@@ -4,7 +4,7 @@ import Navbar from "../components/shared/Navbar/Navbar";
 
 const Root = () => {
     return (
-        <div>
+        <div className="font-openSans">
             <Navbar/>
             <Outlet/>
         </div>
