@@ -1,0 +1,16 @@
+@media screen and (max-width: 375px) {
+  .butter-fly {
+    top: 380px;
+    left: 100px;
+    height: 50%;
+    width: 50%;
+  }
+}
+@media screen and (max-width: 425px) {
+  .butter-fly {
+    top: 295px;
+    left: 100px;
+    height: 50%;
+    width: 50%;
+  }
+}
