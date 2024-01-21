@@ -5,7 +5,7 @@ import "./Banner.css";
 
 const Banner = () => {
   return (
-    <section className="mt-20">
+    <section className="mt-20 px-2">
       <div className="flex flex-col md:flex-row gap-5 justify-center items-center ">
         {/* texts */}
         <div className="relative">
@@ -37,7 +37,7 @@ const Banner = () => {
             Shop Now
           </button>
 
-          <div className="absolute lg:bottom-8 -translate-y-4 md:bottom-5  md:right-36 lg:right-48 xl:left-40 xl:bottom-9 butter-fly">
+          <div className="absolute lg:bottom-8 -translate-y-4 md:bottom-5  md:right-36 lg:right-56 xl:left-40 xl:bottom-9 butter-fly">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="60"
