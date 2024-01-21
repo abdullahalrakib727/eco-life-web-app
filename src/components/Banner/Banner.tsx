@@ -1,8 +1,10 @@
-import Container from "../Container/Container";
+import Container from "../Container/Container.tsx";
 
 import bannerImg from "../../assets/banner.png";
 import leafImg from "../../assets/leaf.png";
-import "./Banner.css";
+
+
+import './Banner.css'
 
 const Banner = () => {
   return (
@@ -39,7 +41,7 @@ const Banner = () => {
               Shop Now
             </button>
 
-            <div className="absolute lg:bottom-8 -translate-y-4 md:bottom-5  md:right-32 lg:right-40 xl:left-40 xl:bottom-9 butter-fly">
+            <div className="absolute lg:bottom-8 -translate-y-4 md:bottom-5  md:right-36 lg:right-48 xl:left-40 xl:bottom-9 butter-fly">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="60"

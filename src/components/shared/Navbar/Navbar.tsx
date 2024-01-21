@@ -146,14 +146,21 @@ const Navbar = () => {
             ))}
           </Box>
 
-          <Box sx={{ flexGrow: 0 }}>
-            <Tooltip >
+          <Box sx={{ flexGrow: 0,}}>
+           <div className="w-1/2 mx-auto flex justify-center items-center gap-2">
+           <Tooltip  title="" >
               <IconButton disableFocusRipple disableRipple disableTouchRipple className="flex justify-center items-center gap-2"  sx={{ p: 0 }}>
                 <FaShoppingBag className="text-[#2BAE7A]" />
-                <FaUserCircle onClick={handleOpenUserMenu} className="text-[#2BAE7A]"/>
                 {/* <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" /> */}
               </IconButton>
             </Tooltip>
+            <Tooltip  title="" >
+              <IconButton onClick={handleOpenUserMenu}  disableFocusRipple disableRipple disableTouchRipple className="flex justify-center items-center gap-2"  sx={{ p: 0 }}>
+                <FaUserCircle className="text-[#2BAE7A]"/>
+                {/* <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" /> */}
+              </IconButton>
+            </Tooltip>
+           </div>
             <Menu
               sx={{ mt: "45px" }}
               id="menu-appbar"
