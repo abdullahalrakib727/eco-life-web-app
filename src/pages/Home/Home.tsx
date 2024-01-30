@@ -1,15 +1,11 @@
 import Banner from "../../components/Banner/Banner.tsx";
-import WhyChooseEcoLife from "../../components/WhyChoose/WhyChooseEcoLife.tsx";
-
-
+import WhyChooseEcoLife from "./WhyChoose/WhyChooseEcoLife.tsx";
 
 const Home = () => {
-
-
   return (
     <div>
       <Banner />
-      <WhyChooseEcoLife/>
+      <WhyChooseEcoLife />
     </div>
   );
 };
