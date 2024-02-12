@@ -1,26 +1,20 @@
 @media screen and (max-width: 320px) {
   .butter-fly {
-    top: 360px;
-    left: 100px;
-    height: 50%;
-    width: 50%;
+    top: 330px;
+    left: 90px;
 
   }
 }
 @media (min-width: 321px) and (max-width: 375px) {
   .butter-fly {
-    top: 300px;
-    left: 100px;
-    height: 50%;
-    width: 50%;
+    top: 250px;
+    left: 90px;
 
   }
 }
 @media (min-width: 376px) and (max-width: 425px) {
   .butter-fly {
-    top: 295px;
-    left: 100px;
-    height: 50%;
-    width: 50%;
+    top: 250px;
+    left: 90px;
   }
 }

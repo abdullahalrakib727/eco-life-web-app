@@ -33,12 +33,17 @@ const FeaturedProducts: FC = (): JSX.Element => {
               </p>
             </div>
             <div className="text-center mt-5">
-            <button className="inline-block text-center w-[164px] h-[42px] bg-[#2BAE7A] text-white px-7 py-2 mx-auto shadow-lg transition-all hover:scale-105 duration-300 border-b-4 border-black rounded-md hover:bg-green-700">
-              Buy Now
-            </button>
+              <button className="inline-block text-center w-[164px] h-[42px] bg-[#2BAE7A] text-white px-7 py-2 mx-auto shadow-lg transition-all hover:scale-105 duration-300 border-b-4 border-black rounded-md hover:bg-green-700">
+                Buy Now
+              </button>
             </div>
           </div>
         ))}
+      </div>
+      <div className="text-center mt-20">
+        <button className="inline-block text-center w-[164px] h-[42px] bg-[#6C8B76] text-white px-7 py-2 mx-auto shadow-lg transition-all hover:scale-105 duration-300 border-b-4 border-gray-400 rounded-md hover:bg-green-700">
+          Explore More
+        </button>
       </div>
     </section>
   );
