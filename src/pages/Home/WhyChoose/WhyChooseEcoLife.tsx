@@ -1,11 +1,12 @@
 import man from "../../../assets/Man.png";
 import { whyChoose } from "../../../dev-data/whyChoose";
-import React from "react";
+import React, { FC } from "react";
 import Header from "../../../components/shared/Header/Header";
 
 type pros = React.ReactNode;
 
-const WhyChooseEcoLife = () => {
+const WhyChooseEcoLife: FC = (): JSX.Element => {
+  
   const all = whyChoose();
 
   return (

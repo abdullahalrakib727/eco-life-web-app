@@ -1,10 +1,10 @@
-type pros = {
+interface Props {
   image: string;
   heading: string | React.ReactNode;
   description: string;
-};
+}
 
-const data: pros[] = [
+const data: Props[] = [
   {
     image: "/group1.png",
     heading: "Diverse Eco-Friendly Products",

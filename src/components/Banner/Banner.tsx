@@ -1,9 +1,10 @@
+import { FC } from "react";
 import bannerImg from "../../assets/banner.png";
 import leafImg from "../../assets/leaf.png";
 
 import "./Banner.css";
 
-const Banner = () => {
+const Banner: FC = (): JSX.Element => {
   return (
     <section className="mt-20 px-2">
       <div className="flex flex-col md:flex-row gap-5 justify-center items-center ">

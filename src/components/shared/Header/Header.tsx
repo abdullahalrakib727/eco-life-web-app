@@ -1,16 +1,13 @@
+import { FC } from "react";
 
-type HeaderProps = {
-    title: string;
-  };
-  
+interface HeaderProps {
+  title: string;
+}
 
-
-const Header = ({title}:HeaderProps) => {
-    return (
-        <h1 className="text-5xl font-bold text-[#2BAE7A] text-center">
-            {title}
-        </h1>
-    );
+const Header: FC<HeaderProps> = ({ title }): JSX.Element => {
+  return (
+    <h1 className="text-5xl font-bold text-[#2BAE7A] text-center">{title}</h1>
+  );
 };
 
 export default Header;
