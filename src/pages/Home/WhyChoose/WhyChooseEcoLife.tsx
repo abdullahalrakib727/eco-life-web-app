@@ -1,13 +1,13 @@
 import man from "../../../assets/Man.png";
-import { whyChoose } from "../../../dev-data/whyChoose";
 import React, { FC } from "react";
 import Header from "../../../components/shared/Header/Header";
+import { data } from "../../../dev-data/whyChoose";
 
 type pros = React.ReactNode;
 
 const WhyChooseEcoLife: FC = (): JSX.Element => {
   
-  const all = whyChoose();
+  const all = data;
 
   return (
     <section>

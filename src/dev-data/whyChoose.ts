@@ -1,10 +1,10 @@
 interface Props {
   image: string;
-  heading: string | React.ReactNode;
+  heading: string;
   description: string;
 }
 
-const data: Props[] = [
+export const data: Props[] = [
   {
     image: "/group1.png",
     heading: "Diverse Eco-Friendly Products",
@@ -25,16 +25,8 @@ const data: Props[] = [
   },
   {
     image: "/group4.png",
-    heading: (
-      <>
-        Long lasting <br /> impact
-      </>
-    ),
+    heading: "Long lasting impact",
     description:
       "You're not just shopping; Your purchases create a positive, lasting impact on the planet through our eco-initiatives.",
   },
 ];
-
-export const whyChoose = () => {
-  return data;
-};
