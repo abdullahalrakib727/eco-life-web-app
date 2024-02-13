@@ -17,6 +17,7 @@ const Home: FC = (): JSX.Element => {
       <Testimonials />
 
       <OurBlogs />
+
       
     </main>
   );
