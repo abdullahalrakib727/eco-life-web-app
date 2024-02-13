@@ -1,12 +1,15 @@
-import  { FC } from "react";
+import { FC } from "react";
 
 interface MainButtonProps {
   value: string;
+  classes?: string;
 }
 
-const MainButton: FC<MainButtonProps> = ({ value }): JSX.Element => {
+const MainButton: FC<MainButtonProps> = ({ value, classes }): JSX.Element => {
   return (
-    <button className="uppercase mt-8 lg:mt-12 bg-primary-color px-4 py-2 text-white lg:px-10 lg:py-4 rounded-lg hover:bg-green-700 transition-all duration-300 ease-linear">
+    <button
+      className={`bg-primary-color text-white uppercase ${classes} rounded-lg hover:bg-green-700 transition-all duration-300 ease-linear hover:scale-105 hover:shadow-xl`}
+    >
       {value}
     </button>
   );

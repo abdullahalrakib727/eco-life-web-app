@@ -33,7 +33,7 @@ const OurBlogs: FC = (): JSX.Element => {
               <img
                 src={blog.image}
                 alt=""
-                className="px-2 lg:max-w-[334px] lg:max-h-[184px] mt-14"
+                className="px-2 xl:max-w-[334px] lg:max-h-[184px] mt-2 rounded-t-2xl xl:mt-14"
               />
               <div className="mb-16">
                 <h1 className="mt-6 text-center text-primary-color font-semibold text-xl md:text-2xl px-5">
