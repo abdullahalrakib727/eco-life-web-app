@@ -142,7 +142,7 @@ const Navbar = () => {
               <NavLink
                 key={index}
                 onClick={handleCloseNavMenu}
-                className="my-2 text-[#D2B48C] block mr-3 font-openSans font-normal text-lg lg:text-xl hover:text-[primary-color]"
+                className="my-2 text-[#D2B48C] block mr-3 font-openSans font-normal text-lg lg:text-xl hover:text-primary-color"
                 to={page.path}
               >
                 {page.pathName}
@@ -160,7 +160,7 @@ const Navbar = () => {
                   className="flex justify-center items-center gap-2"
                   sx={{ p: 0 }}
                 >
-                  <FaShoppingBag className="text-[primary-color]" />
+                  <FaShoppingBag className="text-primary-color" />
                   {/* <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" /> */}
                 </IconButton>
               </Tooltip>
@@ -173,7 +173,7 @@ const Navbar = () => {
                   className="flex justify-center items-center gap-2"
                   sx={{ p: 0 }}
                 >
-                  <FaUserCircle className="text-[primary-color]" />
+                  <FaUserCircle className="text-primary-color" />
                   {/* <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" /> */}
                 </IconButton>
               </Tooltip>
