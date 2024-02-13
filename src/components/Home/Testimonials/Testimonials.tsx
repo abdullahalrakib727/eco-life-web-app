@@ -14,18 +14,24 @@ const Testimonials: FC = (): JSX.Element => {
         <div className="border-b-[1px] border-[#A6C1D1] w-[calc(50%-82px)]"></div>
       </div>
 
-   <div className="mt-24 relative mb-10">
-   <Header title="Customer Testimonials"/>
-   <div className="absolute -z-10 -left-10 lg:left-0 md:-top-2 lg:-top-8">
-        <img src="/left.png" className="xs:max-w-[150px] lg:max-w-[200px] lg:max-h-[273px]" alt="" />
-      </div>
+      <div className="mt-24 relative mb-10">
+        <Header title="Customer Testimonials" />
+        <div className="absolute -z-10 -left-10 lg:left-0 md:-top-2 lg:-top-8">
+          <img
+            src="/left.png"
+            className="xs:max-w-[150px] lg:max-w-[200px] lg:max-h-[273px]"
+            alt=""
+          />
+        </div>
 
-      <div className="absolute -z-10 -right-32 top-10 md:-right-28 md:-top-8 lg:-right-48 lg:-top-16">
-        <img src="/Think.png" className="xs:max-w-[300px]  lg:max-w-[506px] lg:max-h-[424px]" alt="" />
+        <div className="absolute -z-10 -right-32 top-10 md:-right-28 md:-top-8 lg:-right-48 lg:-top-16">
+          <img
+            src="/Think.png"
+            className="xs:max-w-[300px]  lg:max-w-[506px] lg:max-h-[424px]"
+            alt=""
+          />
+        </div>
       </div>
-   </div>
-
-      
 
       <div className="p-16 grid grid-cols-1 lg:grid-cols-3 gap-5">
         {reviews.map((review) => {
