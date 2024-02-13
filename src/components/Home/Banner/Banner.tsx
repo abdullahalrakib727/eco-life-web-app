@@ -6,6 +6,7 @@ import Lottie from "react-lottie-player";
 import "./Banner.css";
 
 import butterFlyAnimation from "./butterfly.json";
+import MainButton from "../../Button/MainButton";
 
 const Banner: FC = (): JSX.Element => {
   return (
@@ -13,7 +14,7 @@ const Banner: FC = (): JSX.Element => {
       <div className="flex flex-col md:flex-row gap-5 justify-center items-center ">
         {/* texts */}
         <div className="relative">
-          <h1 className="font-playFairDisplay font-primary font-black text-4xl md:text-6xl">
+          <h1 className="font-playFairDisplay text-primary-color font-black text-4xl md:text-6xl">
             Welcome to EcoLife
           </h1>
 
@@ -23,23 +24,21 @@ const Banner: FC = (): JSX.Element => {
             alt="leaf-image"
           />
 
-          <p className="font-primary text-2xl md:text-3xl lg:text-4xl mt-8">
+          <p className="text-primary-color text-2xl md:text-3xl lg:text-4xl mt-8">
             Your Journey to a
           </p>
           <p className="font-secondary text-2xl md:text-3xl lg:text-4xl mt-2">
             Sustainable Lifestyle
           </p>
-          <p className="font-primary text-2xl md:text-3xl lg:text-4xl mt-2">
+          <p className="text-primary-color text-2xl md:text-3xl lg:text-4xl mt-2">
             Starts Here.
           </p>
-          <p className="font-primary mt-10 mb-6 lg:mb-2">
+          <p className="text-primary-color mt-10 mb-6 lg:mb-2">
             Browse our curated selection of eco-friendly
             <br />
             products and make every purchase count
           </p>
-          <button className="uppercase mt-8 lg:mt-12 bg-[#2BAE7A] px-4 py-2 text-white lg:px-10 lg:py-4 rounded-lg hover:bg-green-700 transition-all duration-300 ease-linear">
-            Shop Now
-          </button>
+         <MainButton value="Shop now"/>
 
           <div className="absolute translate-y-4 md:bottom-8 md:left-24 lg:left-36 lg:bottom-14 xl:left-36 xl:bottom-14 2xl:bottom-14 2xl:left-36 butter-fly">
             <div className="rotate-[-45deg]">

@@ -4,7 +4,7 @@ import { FC } from "react";
 
 const Root:FC = ():JSX.Element => {
   return (
-    <div className="font-openSans max-w-[1440px] mx-auto">
+    <div className="font-openSans max-w-[1440px] mx-auto overflow-hidden">
       <Navbar />
       <Outlet />
     </div>

@@ -1,8 +1,6 @@
-
 /* fonts */
 
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Open+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Open+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -14,11 +12,10 @@
   box-sizing: border-box;
 }
 
-
-.font-primary{
-  color: #2BAE7A;
+.font-primary {
+  color: primary-color;
 }
 
-.font-secondary{
-  color: #D2B48C;
+.font-secondary {
+  color: #d2b48c;
 }

@@ -26,7 +26,13 @@ export default {
       "2xl": "1440px",
       // => @media (min-width: 1536px) { ... }
     },
-    extend: {},
+    extend: {
+      colors: {
+        'primary-color': '#2BAE7A',
+        'secondary-color': '#8F9779',
+        
+      },
+    },
   },
   plugins: [],
 };

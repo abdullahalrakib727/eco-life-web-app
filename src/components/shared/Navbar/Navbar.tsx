@@ -13,7 +13,7 @@ import MenuItem from "@mui/material/MenuItem";
 
 import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
-import { FaShoppingBag,FaUserCircle } from "react-icons/fa";
+import { FaShoppingBag, FaUserCircle } from "react-icons/fa";
 import "./styles/Navbar.css";
 
 const pages = [
@@ -41,13 +41,17 @@ const pages = [
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 const Navbar = () => {
-  const [anchorElNav, setAnchorElNav] = React.useState<null |HTMLElement>(null);
-  const [anchorElUser, setAnchorElUser] = React.useState<null |HTMLElement>(null);
+  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
+    null
+  );
+  const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
+    null
+  );
 
-  const handleOpenNavMenu = (event : React.MouseEvent<HTMLElement>) => {
+  const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleOpenUserMenu = (event : React.MouseEvent<HTMLElement>) => {
+  const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElUser(event.currentTarget);
   };
 
@@ -138,7 +142,7 @@ const Navbar = () => {
               <NavLink
                 key={index}
                 onClick={handleCloseNavMenu}
-                className="my-2 text-[#D2B48C] block mr-3 font-openSans font-normal text-lg lg:text-xl hover:text-[#2BAE7A]"
+                className="my-2 text-[#D2B48C] block mr-3 font-openSans font-normal text-lg lg:text-xl hover:text-[primary-color]"
                 to={page.path}
               >
                 {page.pathName}
@@ -146,21 +150,34 @@ const Navbar = () => {
             ))}
           </Box>
 
-          <Box sx={{ flexGrow: 0,}}>
-           <div className="w-1/2 mx-auto flex justify-center items-center gap-2">
-           <Tooltip  title="" >
-              <IconButton disableFocusRipple disableRipple disableTouchRipple className="flex justify-center items-center gap-2"  sx={{ p: 0 }}>
-                <FaShoppingBag className="text-[#2BAE7A]" />
-                {/* <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" /> */}
-              </IconButton>
-            </Tooltip>
-            <Tooltip  title="" >
-              <IconButton onClick={handleOpenUserMenu}  disableFocusRipple disableRipple disableTouchRipple className="flex justify-center items-center gap-2"  sx={{ p: 0 }}>
-                <FaUserCircle className="text-[#2BAE7A]"/>
-                {/* <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" /> */}
-              </IconButton>
-            </Tooltip>
-           </div>
+          <Box sx={{ flexGrow: 0 }}>
+            <div className="w-1/2 mx-auto flex justify-center items-center gap-2">
+              <Tooltip title="">
+                <IconButton
+                  disableFocusRipple
+                  disableRipple
+                  disableTouchRipple
+                  className="flex justify-center items-center gap-2"
+                  sx={{ p: 0 }}
+                >
+                  <FaShoppingBag className="text-[primary-color]" />
+                  {/* <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" /> */}
+                </IconButton>
+              </Tooltip>
+              <Tooltip title="">
+                <IconButton
+                  onClick={handleOpenUserMenu}
+                  disableFocusRipple
+                  disableRipple
+                  disableTouchRipple
+                  className="flex justify-center items-center gap-2"
+                  sx={{ p: 0 }}
+                >
+                  <FaUserCircle className="text-[primary-color]" />
+                  {/* <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" /> */}
+                </IconButton>
+              </Tooltip>
+            </div>
             <Menu
               sx={{ mt: "45px" }}
               id="menu-appbar"

@@ -14,8 +14,8 @@ const WhyChooseEcoLife: FC = (): JSX.Element => {
         <Header title="Why choose EcoLife?" />
         <img
           src={man}
-          alt="man-image"
-          className="hidden md:flex absolute md:-bottom-20 lg:"
+          alt="man-thinking"
+          className="hidden md:flex absolute md:-bottom-20 -left-1"
         />
       </div>
       {/* card section */}
@@ -35,7 +35,7 @@ const WhyChooseEcoLife: FC = (): JSX.Element => {
                   style={{ boxShadow: "0px 0px 10px 1px #D6F7E7" }}
                 />
               </div>
-              <h1 className="text-[#2BAE7A] text-2xl max-w-[241px] font-semibold text-center mb-2 h-[69px]">
+              <h1 className="text-primary-color text-2xl max-w-[241px] font-semibold text-center mb-2 h-[69px]">
                 {data.heading.split("\n").map((line, i) => (
                   <React.Fragment key={i}>
                     {line}
@@ -43,7 +43,7 @@ const WhyChooseEcoLife: FC = (): JSX.Element => {
                   </React.Fragment>
                 ))}
               </h1>
-              <p className="text-xl font-light max-w-[273px] text-center text-[#8F9779]">
+              <p className="text-xl font-light max-w-[273px] text-center text-secondary-color">
                 {data.description}
               </p>
             </div>
