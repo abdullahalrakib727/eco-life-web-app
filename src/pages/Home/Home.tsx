@@ -3,6 +3,7 @@ import Banner from "../../components/Home/Banner/Banner.tsx";
 import FeaturedProducts from "../../components/Home/Featured/FeaturedProducts.tsx";
 import WhyChooseEcoLife from "../../components/Home/WhyChoose/WhyChooseEcoLife.tsx";
 import Testimonials from "../../components/Home/Testimonials/Testimonials.tsx";
+import OurBlogs from "../../components/Home/Blogs/OurBlogs.tsx";
 
 const Home: FC = (): JSX.Element => {
   return (
@@ -12,8 +13,11 @@ const Home: FC = (): JSX.Element => {
       <WhyChooseEcoLife />
 
       <FeaturedProducts />
-      <Testimonials/>
 
+      <Testimonials />
+
+      <OurBlogs />
+      
     </main>
   );
 };

@@ -6,14 +6,16 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
 .font-primary {
-  color: primary-color;
+  color: #2bae7a;
 }
 
 .font-secondary {
