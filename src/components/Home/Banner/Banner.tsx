@@ -1,6 +1,6 @@
 import { FC } from "react";
-import bannerImg from "../../assets/banner.png";
-import leafImg from "../../assets/leaf.png";
+import bannerImg from "../../../assets/banner.png";
+import leafImg from "../../../assets/leaf.png";
 import Lottie from "react-lottie-player";
 
 import "./Banner.css";

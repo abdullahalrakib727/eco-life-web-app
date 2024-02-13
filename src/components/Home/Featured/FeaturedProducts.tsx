@@ -1,5 +1,5 @@
 import { FC } from "react";
-import Header from "../../../components/shared/Header/Header";
+import Header from "../../shared/Header/Header";
 import { Products } from "../../../dev-data/featuredProductData";
 
 const FeaturedProducts: FC = (): JSX.Element => {
@@ -12,13 +12,16 @@ const FeaturedProducts: FC = (): JSX.Element => {
       <div className="absolute left-0 -z-20 top-16">
         <img className="max-w-[232px] max-h-[273px]" src="/left.png" alt="" />
       </div>
-    <div className="absolute -z-20 right-0 -top-10">
-    <img className="max-w-[232px] max-h-[273px]" src="/right.png" alt="" />
-    </div>
-    {/* main content */}
+      <div className="absolute -z-20 right-0 -top-10">
+        <img className="max-w-[232px] max-h-[273px]" src="/right.png" alt="" />
+      </div>
+      {/* main content */}
       <div className="mt-24 grid grid-cols-1  md:grid-cols-3 gap-16 p-16">
         {AllProducts.map((product, index) => (
-          <div className="max-w-[413px] max-h-[612px] overflow-hidden" key={index}>
+          <div
+            className="max-w-[413px] max-h-[612px] overflow-hidden"
+            key={index}
+          >
             <img
               src={product.image}
               alt="product-image"
