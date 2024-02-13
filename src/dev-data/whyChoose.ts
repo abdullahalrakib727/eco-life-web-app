@@ -25,7 +25,7 @@ export const data: Props[] = [
   },
   {
     image: "/group4.png",
-    heading: "Long lasting impact",
+    heading: "Long lasting\nimpact",
     description:
       "You're not just shopping; Your purchases create a positive, lasting impact on the planet through our eco-initiatives.",
   },

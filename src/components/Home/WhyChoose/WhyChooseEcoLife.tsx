@@ -36,9 +36,14 @@ const WhyChooseEcoLife: FC = (): JSX.Element => {
                 />
               </div>
               <h1 className="text-[#2BAE7A] text-2xl max-w-[241px] font-semibold text-center mb-2 h-[69px]">
-                {data.heading}
+                {data.heading.split("\n").map((line, i) => (
+                  <React.Fragment key={i}>
+                    {line}
+                    <br />
+                  </React.Fragment>
+                ))}
               </h1>
-              <p className="text-xl font-light max-w-[273px] text-center text-[#8F9779] max-h-[135px]">
+              <p className="text-xl font-light max-w-[273px] text-center text-[#8F9779]">
                 {data.description}
               </p>
             </div>

@@ -5,13 +5,17 @@ import WhyChooseEcoLife from "../../components/Home/WhyChoose/WhyChooseEcoLife.t
 
 const Home: FC = (): JSX.Element => {
   return (
-    <section>
+    <main>
       <Banner />
+
       <WhyChooseEcoLife />
-      <div className="mt-16">
-        <FeaturedProducts />
+
+      <FeaturedProducts />
+
+      <div className="h-screen">
+        para
       </div>
-    </section>
+    </main>
   );
 };
 
