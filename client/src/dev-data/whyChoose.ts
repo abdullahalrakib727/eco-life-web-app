@@ -1,10 +1,10 @@
-interface Props {
+interface DataProps {
   image: string;
   heading: string;
   description: string;
 }
 
-export const data: Props[] = [
+export const data: DataProps[] = [
   {
     image: "/group1.png",
     heading: "Diverse Eco-Friendly Products",

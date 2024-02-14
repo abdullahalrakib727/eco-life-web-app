@@ -3,7 +3,7 @@ import React, { FC } from "react";
 import Header from "../../shared/Header/Header";
 import { data } from "../../../dev-data/whyChoose";
 
-type pros = React.ReactNode;
+
 
 const WhyChooseEcoLife: FC = (): JSX.Element => {
   const all = data;
@@ -22,7 +22,7 @@ const WhyChooseEcoLife: FC = (): JSX.Element => {
       <div className="mt-20 px-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 max-w-[1280px] mx-auto">
         {/* card */}
         {all.map(
-          (data, index): pros => (
+          (data, index) => (
             <div
               key={index}
               className="flex flex-col max-h-[350px]  items-center"
