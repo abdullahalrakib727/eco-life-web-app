@@ -12,5 +12,4 @@ const Button: FC<ButtonProps> = ({ value }): JSX.Element => {
     </button>
   );
 };
-
 export default Button;

@@ -7,6 +7,7 @@ import {
   createUserWithEmailAndPassword,
   getAuth,
   onAuthStateChanged,
+  sendEmailVerification,
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
@@ -64,6 +65,13 @@ const AuthProvider: FC<AuthProviderProps> = ({ children }): JSX.Element => {
     try {
       await createUserWithEmailAndPassword(auth, email, password);
       toast.success("Signup successful!");
+
+      const currentUser = auth.currentUser;
+
+      if (currentUser) {
+        await sendEmailVerification(currentUser);
+        toast.success("Verification email sent!");
+      }
     } catch (error) {
       setLoading(true);
       if (error instanceof Error) {
@@ -135,7 +143,7 @@ const AuthProvider: FC<AuthProviderProps> = ({ children }): JSX.Element => {
       }
       // console.log(user);
     } catch (error) {
-      console.log(error)
+      console.log(error);
       if (error instanceof Error) {
         setError(error.message);
         console.log(error.message);
