@@ -20,7 +20,7 @@ const Register: FC = (): JSX.Element => {
       <div>
         <div className="bg-slate-800 border border-slate-400 rounded-md p-8 shadow-lg backdrop-filter backdrop-blur-sm bg-opacity-30  relative">
           <h1 className="text-4xl text-white font-bold text-center mb-6">
-            Login
+           Signup
           </h1>
           <form onSubmit={(e) => handleSubmit(e)}>
             <div className="relative my-10">
@@ -29,7 +29,7 @@ const Register: FC = (): JSX.Element => {
                 name="username"
                 id="name"
                 className="block w-72 py-2 px-0 text-sm bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:focus:border-blue-500  focus:outline-none focus:ring-0 focus:text-white focus:border-blue-600 peer"
-              />
+              required/>
               <label
                 htmlFor="name"
                 className="absolute text-lg text-white duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-8 "
@@ -43,7 +43,7 @@ const Register: FC = (): JSX.Element => {
                 name="email"
                 id="email"
                 className="block w-72 py-2 px-0 text-sm bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:focus:border-blue-500  focus:outline-none focus:ring-0 focus:text-white focus:border-blue-600 peer"
-              />
+              required/>
               <label
                 htmlFor="email"
                 className="absolute text-lg text-white duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-8 "
@@ -57,7 +57,7 @@ const Register: FC = (): JSX.Element => {
                 name="password"
                 id="password"
                 className="block w-72 py-2 px-0 text-sm bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:focus:border-blue-500  focus:outline-none focus:ring-0 focus:text-white focus:border-blue-600 peer"
-              />
+              required/>
               <label
                 htmlFor="password"
                 className="absolute text-lg text-white duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-8 "
@@ -84,7 +84,7 @@ const Register: FC = (): JSX.Element => {
             </button>
             <div className="text-sm text-center">
               <span>
-                Already Have Account? <Link to="/login">Login</Link>
+                Already Have Account? <Link to="/login" className="hover:text-blue-500">Login</Link>
               </span>
             </div>
           </form>

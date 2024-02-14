@@ -20,7 +20,6 @@ import toast from "react-hot-toast";
 //* interfaces
 interface AuthInfo {
   loading: boolean;
-  error: string;
   createUser: (email: string, password: string) => void;
   signInUser: (email: string, password: string) => void;
   signOutUser: () => void;
@@ -38,7 +37,6 @@ interface AuthProviderProps {
 
 const defaultAuthInfo: AuthInfo = {
   loading: false,
-  error: "",
   user: null,
   createUser: () => {},
   signInUser: () => {},
@@ -59,7 +57,6 @@ const provider = new GoogleAuthProvider();
 const AuthProvider: FC<AuthProviderProps> = ({ children }): JSX.Element => {
   const [loading, setLoading] = useState(true);
   const [user, setUser] = useState<User | null>(null);
-  const [error, setError] = useState<string>("");
 
   //? create user with email and password
 
@@ -78,9 +75,9 @@ const AuthProvider: FC<AuthProviderProps> = ({ children }): JSX.Element => {
     } catch (error) {
       setLoading(true);
       if (error instanceof Error) {
-        setError(error.message);
-        toast.error(error.message);
-        console.log(error.message);
+        if (error.message === "Firebase: Error (auth/email-already-in-use).") {
+          toast.error("Email already in use!");
+        }
       }
     }
   };
@@ -96,9 +93,9 @@ const AuthProvider: FC<AuthProviderProps> = ({ children }): JSX.Element => {
     } catch (error) {
       setLoading(true);
       if (error instanceof Error) {
-        setError(error.message);
-        toast.error(error.message);
-        console.log(error.message);
+        if (error.message === "Firebase: Error (auth/invalid-credential).") {
+          toast.error("invalid credential!");
+        }
       }
     }
   };
@@ -113,7 +110,6 @@ const AuthProvider: FC<AuthProviderProps> = ({ children }): JSX.Element => {
     } catch (error) {
       setLoading(true);
       if (error instanceof Error) {
-        setError(error.message);
         console.log(error.message);
       }
     }
@@ -131,7 +127,6 @@ const AuthProvider: FC<AuthProviderProps> = ({ children }): JSX.Element => {
       }
     } catch (error) {
       if (error instanceof Error) {
-        setError(error.message);
         toast.error(error.message);
         console.log(error.message);
       }
@@ -141,16 +136,17 @@ const AuthProvider: FC<AuthProviderProps> = ({ children }): JSX.Element => {
   // sign in with google
 
   const googleSignIn = async () => {
+    setLoading(true);
     try {
       const result = await signInWithPopup(auth, provider);
       const user = result.user;
       if (user) {
         toast.success("Login successful!");
+        setLoading(false);
       }
     } catch (error) {
       console.log(error);
       if (error instanceof Error) {
-        setError(error.message);
         console.log(error.message);
       }
     }
@@ -159,12 +155,12 @@ const AuthProvider: FC<AuthProviderProps> = ({ children }): JSX.Element => {
   // ? send reset password email
 
   const sendResetPasswordEmail = async (email: string) => {
+    setLoading(true);
     try {
       await sendPasswordResetEmail(auth, email);
       toast.success("Reset password email sent!");
     } catch (error) {
       if (error instanceof Error) {
-        setError(error.message);
         toast.error(error.message);
         console.log(error.message);
       }
@@ -196,7 +192,6 @@ const AuthProvider: FC<AuthProviderProps> = ({ children }): JSX.Element => {
     signOutUser,
     updateUser,
     user,
-    error,
     googleSignIn,
     sendResetPasswordEmail,
   };
