@@ -35,11 +35,11 @@ const OurBlogs: FC = (): JSX.Element => {
                 alt=""
                 className="px-2 xl:max-w-[334px] lg:max-h-[184px] mt-2 rounded-t-2xl xl:mt-14"
               />
-              <div className="mb-16">
+              <div className="mb-5 xl:mb-10">
                 <h1 className="mt-6 text-center text-primary-color font-semibold text-xl md:text-2xl px-5">
                   {blog.title}
                 </h1>
-                <p className="px-2 mt-14 text-secondary-color text-center text-sm md:text-base">
+                <p className="px-2 mt-5 xl:mt-14 text-secondary-color text-center text-sm md:text-base">
                   {blog.description}
                 </p>
               </div>

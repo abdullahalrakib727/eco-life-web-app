@@ -35,7 +35,7 @@ const WhyChooseEcoLife: FC = (): JSX.Element => {
                   style={{ boxShadow: "0px 0px 10px 1px #D6F7E7" }}
                 />
               </div>
-              <h1 className="text-primary-color text-2xl max-w-[241px] font-semibold text-center mb-2 h-[69px]">
+              <h1 className="text-primary-color text-2xl max-w-[241px] font-semibold text-center mb-2 max-h-[69px]">
                 {data.heading.split("\n").map((line, i) => (
                   <React.Fragment key={i}>
                     {line}
