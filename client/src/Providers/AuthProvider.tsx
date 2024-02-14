@@ -8,6 +8,7 @@ import {
   getAuth,
   onAuthStateChanged,
   sendEmailVerification,
+  sendPasswordResetEmail,
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
@@ -25,6 +26,7 @@ interface AuthInfo {
   signOutUser: () => void;
   updateUser: (name: string, photo: string) => void;
   googleSignIn: () => void;
+  sendResetPasswordEmail: (email: string) => void;
   user: User | null;
 }
 
@@ -43,6 +45,7 @@ const defaultAuthInfo: AuthInfo = {
   signOutUser: () => {},
   updateUser: () => {},
   googleSignIn: () => {},
+  sendResetPasswordEmail: () => {},
 };
 
 // ? create context
@@ -76,6 +79,7 @@ const AuthProvider: FC<AuthProviderProps> = ({ children }): JSX.Element => {
       setLoading(true);
       if (error instanceof Error) {
         setError(error.message);
+        toast.error(error.message);
         console.log(error.message);
       }
     }
@@ -93,6 +97,7 @@ const AuthProvider: FC<AuthProviderProps> = ({ children }): JSX.Element => {
       setLoading(true);
       if (error instanceof Error) {
         setError(error.message);
+        toast.error(error.message);
         console.log(error.message);
       }
     }
@@ -127,6 +132,7 @@ const AuthProvider: FC<AuthProviderProps> = ({ children }): JSX.Element => {
     } catch (error) {
       if (error instanceof Error) {
         setError(error.message);
+        toast.error(error.message);
         console.log(error.message);
       }
     }
@@ -141,11 +147,25 @@ const AuthProvider: FC<AuthProviderProps> = ({ children }): JSX.Element => {
       if (user) {
         toast.success("Login successful!");
       }
-      // console.log(user);
     } catch (error) {
       console.log(error);
       if (error instanceof Error) {
         setError(error.message);
+        console.log(error.message);
+      }
+    }
+  };
+
+  // ? send reset password email
+
+  const sendResetPasswordEmail = async (email: string) => {
+    try {
+      await sendPasswordResetEmail(auth, email);
+      toast.success("Reset password email sent!");
+    } catch (error) {
+      if (error instanceof Error) {
+        setError(error.message);
+        toast.error(error.message);
         console.log(error.message);
       }
     }
@@ -178,6 +198,7 @@ const AuthProvider: FC<AuthProviderProps> = ({ children }): JSX.Element => {
     user,
     error,
     googleSignIn,
+    sendResetPasswordEmail,
   };
 
   return (

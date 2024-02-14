@@ -3,6 +3,7 @@ import Root from "../Layout/Root.tsx";
 import Home from "../pages/Home/Home.tsx";
 import Login from "../pages/Login/Login.tsx";
 import Register from "../pages/Register/Register.tsx";
+import ForgetPassword from "../pages/ForgetPassword/ForgetPassword.tsx";
 
 const App = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const App = createBrowserRouter([
       {
         path: "/signup",
         element: <Register />,
+      },
+      {
+        path: "/forgot-password",
+        element: <ForgetPassword />,
       },
     ],
   },
