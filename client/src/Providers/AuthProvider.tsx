@@ -2,6 +2,7 @@ import { FC, ReactNode, createContext, useEffect, useState } from "react";
 import { app } from "../firebase/firebase.config";
 
 import {
+  GoogleAuthProvider,
   User,
   createUserWithEmailAndPassword,
   getAuth,
@@ -11,7 +12,8 @@ import {
   signOut,
   updateProfile,
 } from "firebase/auth";
-import { GoogleAuthProvider } from "firebase/auth/cordova";
+
+import toast from "react-hot-toast";
 
 //* interfaces
 interface AuthInfo {
@@ -61,6 +63,7 @@ const AuthProvider: FC<AuthProviderProps> = ({ children }): JSX.Element => {
     setLoading(true);
     try {
       await createUserWithEmailAndPassword(auth, email, password);
+      toast.success("Signup successful!");
     } catch (error) {
       setLoading(true);
       if (error instanceof Error) {
@@ -77,6 +80,7 @@ const AuthProvider: FC<AuthProviderProps> = ({ children }): JSX.Element => {
     try {
       await signInWithEmailAndPassword(auth, email, password);
       setLoading(false);
+      toast.success("Login successful!");
     } catch (error) {
       setLoading(true);
       if (error instanceof Error) {
@@ -92,6 +96,7 @@ const AuthProvider: FC<AuthProviderProps> = ({ children }): JSX.Element => {
     setLoading(true);
     try {
       await signOut(auth);
+      toast.success("Logout successful!");
     } catch (error) {
       setLoading(true);
       if (error instanceof Error) {
@@ -125,8 +130,12 @@ const AuthProvider: FC<AuthProviderProps> = ({ children }): JSX.Element => {
     try {
       const result = await signInWithPopup(auth, provider);
       const user = result.user;
-      console.log(user);
+      if (user) {
+        toast.success("Login successful!");
+      }
+      // console.log(user);
     } catch (error) {
+      console.log(error)
       if (error instanceof Error) {
         setError(error.message);
         console.log(error.message);

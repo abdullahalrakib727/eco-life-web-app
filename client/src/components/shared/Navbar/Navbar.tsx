@@ -52,6 +52,7 @@ const Navbar = () => {
 
   const handleLogout = () => {
     signOutUser();
+    setAnchorElUser(null);
   };
 
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
@@ -226,7 +227,7 @@ const Navbar = () => {
               ) : (
                 <MenuItem>
                   <Link to="/login">
-                    <Typography textAlign="center">Login</Typography>
+                    <Typography onClick={handleCloseUserMenu} textAlign="center">Login</Typography>
                   </Link>
                 </MenuItem>
               )}
