@@ -11,8 +11,7 @@ import {
   updateProfile,
 } from "firebase/auth";
 
-//! interfaces
-
+//* interfaces
 interface AuthInfo {
   loading: boolean;
   createUser: (email: string, password: string) => void;
@@ -26,11 +25,26 @@ interface AuthProviderProps {
   children: ReactNode;
 }
 
-export const AuthContext = createContext<AuthInfo | null>(null);
+
+// ? default auth info
+
+const defaultAuthInfo: AuthInfo = {
+  loading: false,
+  user: null,
+  createUser: () => {},
+  signInUser: () => {},
+  signOutUser: () => {},
+  updateUser: () => {},
+};
+
+// ? create context
+
+export const AuthContext = createContext<AuthInfo>(defaultAuthInfo);
 
 const auth = getAuth(app);
 
 const AuthProvider: FC<AuthProviderProps> = ({ children }): JSX.Element => {
+  
   const [loading, setLoading] = useState(true);
   const [user, setUser] = useState<User | null>(null);
 
