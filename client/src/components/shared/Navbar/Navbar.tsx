@@ -15,32 +15,45 @@ import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import { FaShoppingBag, FaUserCircle } from "react-icons/fa";
 import "./styles/Navbar.css";
-
-const pages = [
-  {
-    path: "/",
-    pathName: "Home",
-  },
-  {
-    path: "/shop",
-    pathName: "Shop",
-  },
-  {
-    path: "/blogs",
-    pathName: "Blogs",
-  },
-  {
-    path: "/about",
-    pathName: "About Us",
-  },
-  {
-    path: "/contact",
-    pathName: "Contact",
-  },
-];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+import useAuth from "../../../hooks/useAuth";
 
 const Navbar = () => {
+  const { user, signOutUser } = useAuth();
+
+  const pages = [
+    {
+      path: "/",
+      pathName: "Home",
+    },
+    {
+      path: "/shop",
+      pathName: "Shop",
+    },
+    {
+      path: "/blogs",
+      pathName: "Blogs",
+    },
+    {
+      path: "/about",
+      pathName: "About Us",
+    },
+    {
+      path: "/contact",
+      pathName: "Contact",
+    },
+  ];
+
+  const settings = [
+    { name: "Profile", path: "/profile" },
+    { name: "Account", path: "/account" },
+    { name: "Dashboard", path: "/dashboard" },
+    { name: "Logout" },
+  ];
+
+  const handleLogout = () => {
+    signOutUser();
+  };
+
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
   );
@@ -194,11 +207,29 @@ const Navbar = () => {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
+              {user ? (
+                settings.map((setting) =>
+                  setting.name === "Logout" ? (
+                    <MenuItem key={setting.name} onClick={handleLogout}>
+                      <Typography textAlign="center">{setting.name}</Typography>
+                    </MenuItem>
+                  ) : setting.path ? (
+                    <MenuItem key={setting.path} onClick={handleCloseUserMenu}>
+                      <Link to={setting.path}>
+                        <Typography textAlign="center">
+                          {setting.name}
+                        </Typography>
+                      </Link>
+                    </MenuItem>
+                  ) : null
+                )
+              ) : (
+                <MenuItem>
+                  <Link to="/login">
+                    <Typography textAlign="center">Login</Typography>
+                  </Link>
                 </MenuItem>
-              ))}
+              )}
             </Menu>
           </Box>
         </Toolbar>
