@@ -27,7 +27,7 @@ const FeaturedProducts: FC = (): JSX.Element => {
       {/* main content */}
       <div className="mt-28 grid grid-cols-1  md:grid-cols-3 gap-16 p-16">
         {AllProducts.map((product) => (
-         <ProductCard key={product.id} product={product} />
+         <ProductCard key={product?.id} product={product} />
         ))}
       </div>
     </section>
