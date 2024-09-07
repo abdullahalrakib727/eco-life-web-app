@@ -43,10 +43,10 @@ const FeaturedProducts: FC = (): JSX.Element => {
             <div className="flex justify-between mt-3 items-center">
               <div className="flex gap-2 lg:gap-4 items-center">
                 <p className=" text-lg lg:text-2xl font-extrabold">
-                  {product.discountedPrice} Rs.
+                  {product.discountedPrice} Tk.
                 </p>
                 <p className="text-base lg:text-lg font-bold">
-                  {product.price} Rs.
+                  {product.price} Tk.
                 </p>
               </div>
               <a href="#" className="text-lg font-normal underline">
