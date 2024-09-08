@@ -8,12 +8,13 @@ import Shop from "../pages/Shop/Shop.tsx";
 import Blogs from "../pages/Blogs/Blogs.tsx";
 import About from "../pages/About/About.tsx";
 import Contact from "../pages/Contact/Contact.tsx";
+import { ErrorPage } from "../pages/ErrorPage/ErrorPage.tsx";
 
 const App = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
-    errorElement: <div className="min-h-svh flex justify-center items-center text-red-500 font-bold text-4xl">404 Not Found</div>,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
